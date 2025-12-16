@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# 🚜 AgroSketch Pro
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> Uma ferramenta móvel robusta para mapeamento rural, medição de áreas via satélite e planejamento de plantio.
 
-## Get started
+![Badge Expo](https://img.shields.io/badge/Expo-4630EB?style=for-the-badge&logo=expo&logoColor=white)
+![Badge React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Badge TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-1. Install dependencies
+## 📱 Sobre o Projeto
 
-   ```bash
-   npm install
-   ```
+O **AgroSketch Pro** foi desenvolvido para resolver dores reais de engenheiros agrônomos e produtores rurais. Ele substitui anotações em papel e medições manuais imprecisas por uma interface digital baseada em geolocalização.
 
-2. Start the app
+O aplicativo permite desenhar talhões (áreas de plantio) sobre imagens de satélite, calcular automaticamente a área em hectares ou metros quadrados e estimar a quantidade de insumos/mudas necessárias com base no espaçamento de plantio.
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Funcionalidades Principais
 
-In the output, you'll find options to open the app in a
+* **🛰️ Mapeamento via Satélite:** Desenho de polígonos precisos usando a API do Google Maps.
+* **📏 Cálculos Automáticos:** * Área Total (Hectares e m²).
+    * Perímetro.
+* **🌱 Calculadora Agrícola:** Estimativa de estande (quantidade de plantas) e metros lineares baseada no espaçamento (Linha x Planta).
+* **💾 Gestão de Projetos:** Salve, edite e exclua mapeamentos localmente (Persistência de dados offline).
+* **📄 Relatórios em PDF:** Geração automática de relatórios com "foto" do mapa e tabela de dados prontos para compartilhamento (WhatsApp/E-mail).
+* **📍 GPS Tracking:** Localização em tempo real do usuário no campo.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📸 Screenshots
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Editor de Terreno | Calculadora de Plantio | Meus Projetos |
+|:---:|:---:|:---:|
+| <img src="./assets/print_mapa.png" width="200" /> | <img src="./assets/print_calc.png" width="200" /> | <img src="./assets/print_lista.png" width="200" /> |
 
-## Get a fresh project
 
-When you're ready, run:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-npm run reset-project
-```
+* **Core:** React Native (Expo SDK 50+)
+* **Linguagem:** TypeScript
+* **Mapas:** `react-native-maps` (Google Maps API)
+* **Geometria:** `@turf/turf` (Cálculos geoespaciais avançados)
+* **Persistência:** `AsyncStorage`
+* **Exportação:** `expo-print` & `expo-sharing` (PDF) & `react-native-view-shot`
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
