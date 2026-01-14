@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView, StatusBar, Alert } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 
 interface HomeProps {
   onNavigate: (screen: string) => void;
@@ -11,7 +12,7 @@ interface HomeProps {
 export default function Home({ onNavigate, savedCount }: HomeProps) {
   return (
     <SafeAreaView style={styles.homeContainer}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F5F5F5" />
+      <StatusBar style="dark" />
       
       <View style={styles.header}>
         <View>

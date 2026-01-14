@@ -1,3 +1,5 @@
+(feito com Vibe coding)
+
 # 🚜 AgroSketch Pro
 
 > Uma ferramenta móvel robusta para mapeamento rural, medição de áreas via satélite e planejamento de plantio.

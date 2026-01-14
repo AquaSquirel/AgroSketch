@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Keyboard, TouchableWithoutFeedback, Alert, ScrollView } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context'; // <--- O SEGREDO
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 
-interface CalculatorProps {
-  onBack: () => void;
-}
-
-export default function Calculator({ onBack }: CalculatorProps) {
-  const insets = useSafeAreaInsets(); // Pega a altura da câmera/notch
+export default function Calculator() {
+  const insets = useSafeAreaInsets();
   
   const [hectares, setHectares] = useState('');
   const [linha, setLinha] = useState('');
@@ -27,10 +25,7 @@ export default function Calculator({ onBack }: CalculatorProps) {
       return;
     }
 
-    // 1 Hectare = 10.000 m²
     const areaM2 = ha * 10000;
-    
-    // Cálculo de mudas: Área / (Linha em metros * Planta em metros)
     const lMetros = l / 100;
     const pMetros = p / 100;
     
@@ -43,12 +38,11 @@ export default function Calculator({ onBack }: CalculatorProps) {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      {/* 1. View normal (sem SafeAreaView) preenchendo a tela */}
       <View style={{ flex: 1, backgroundColor: '#F8F9FA' }}>
+        <StatusBar style="dark" />
         
-        {/* 2. Header com paddingTop dinâmico (insets.top) */}
         <View style={[styles.header, { paddingTop: insets.top + 20 }]}>
-            <TouchableOpacity onPress={onBack}>
+            <TouchableOpacity onPress={() => router.back()}>
                 <Ionicons name="arrow-back" size={28} color="#333" />
             </TouchableOpacity>
             <Text style={styles.title}>Calculadora Rápida</Text>
@@ -86,7 +80,6 @@ export default function Calculator({ onBack }: CalculatorProps) {
                 <Text style={styles.btnTxt}>CALCULAR</Text>
             </TouchableOpacity>
 
-            {/* Resultado */}
             {resultado !== null && (
                 <View style={styles.resultCard}>
                     <Text style={styles.resultTitle}>Estimativa de Plantio</Text>

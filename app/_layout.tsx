@@ -1,11 +1,14 @@
 import { Stack } from 'expo-router';
+import { LandsProvider } from '../src/context/LandsContext';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
-    <Stack 
-      screenOptions={{ 
-        headerShown: false // <--- ISSO REMOVE O "index" BRANCO
-      }} 
-    />
+    <LandsProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="map" />
+        <Stack.Screen name="list" />
+      </Stack>
+    </LandsProvider>
   );
 }
